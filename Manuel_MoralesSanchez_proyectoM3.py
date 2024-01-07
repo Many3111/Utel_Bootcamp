@@ -6,16 +6,21 @@
 import random
 import matplotlib.pyplot as plt
 
+# - Permite iniciar con 0 canicas en cada contenedor y agrega la cantidad 
+# de contenedores requiridos por cada obstaculo
 def simular_canicas(num_canicas, niveles):
-    contenedores = [0] * (niveles + 1)  # Permite iniciar con 0 canicas en cada contenedor
+    contenedores = [0] * (niveles + 1)  
     
+# - Con el siguiente bucle permite que por cada canica se aplique otro bucle
+# en el cual por cada nivel se elija la opcion de derecha o izquierda
     for i in range(num_canicas):
         nivel_actual = 0
         for i in range(niveles):
             direccion = random.choice(["izquierda", "derecha"])
             if direccion == "izquierda":
                 nivel_actual += 1
-        contenedores[nivel_actual] += 1  # Agregar la canica al contenedor correspondiente
+        contenedores[nivel_actual] += 1  
+        # Agrega la canica al contenedor correspondiente
     
     return contenedores
 
